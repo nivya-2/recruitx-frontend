@@ -1,0 +1,21 @@
+.job-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0;
+  }
+  
+  .job-info {
+    flex: 2;
+  }
+  
+  .job-openings {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .assign-button {
+    flex: 0;
+    min-width: 100px;
+  }
+  

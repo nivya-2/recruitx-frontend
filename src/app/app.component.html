@@ -1,0 +1,9 @@
+<h2>Job Requisition Forms</h2>
+
+<app-jrrow
+  *ngFor="let job of jobs"
+  [title]="job.title"
+  [date]="job.date"
+  [location]="job.location"
+  [openings]="job.openings">
+</app-jrrow>
