@@ -1,0 +1,18 @@
+<!-- <p>table works!</p> -->
+<table mat-table [dataSource]="dataSource" matSort class='tableDesign mat-elevation-z16'>
+  
+    <ng-container *ngFor="let column of displayedColumns">
+      <ng-container [matColumnDef]="column">
+        <th mat-header-cell *matHeaderCellDef>
+            <div [mat-sort-header]="column" [disabled]="column === 'actions'"> {{ columnLabels[column] }}</div>
+         </th>
+        <td mat-cell [ngClass]="{'center-text': column === 'openPositions'}" *matCellDef="let element">
+            {{ column === 'actions' ? '' : element[column] }}
+            <button *ngIf="column === 'actions'" mat-button>Action</button>
+      </ng-container>
+  </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+
+</table>
