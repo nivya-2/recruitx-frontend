@@ -1,9 +1,13 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { HeaderTextComponent } from './widgets/header-text/header-text.component';
+import { ProfileComponent } from './widgets/profile/profile.component';
+import { ProfileBoxComponent } from './widgets/profile-box/profile-box.component';
+import { HeaderComponent } from './widgets/header/header.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet,HeaderTextComponent,ProfileComponent,ProfileBoxComponent,HeaderComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
