@@ -1,24 +1,5 @@
 <app-header></app-header>
-<!-- 
+<br>
+<app-tablefilter></app-tablefilter>
 
-    <app-icons name="home" customColor="#7B61FF" size="32px"></app-icons>
-    <app-icons name="dashboard" customColor="#B8AAFF" size="40px"></app-icons>
-    <app-icons name="message" customColor="#636363"  size="36px"></app-icons>
-    <app-icons name="settings" customColor="#304C57" size="48px"></app-icons>s
- -->
-
-<app-dropdownfilter
-  [placeholder]="'Select a Role'"
-  [options]="['Developer', 'Tester', 'Manager']">
-</app-dropdownfilter>
-<app-dropdownfilter
-  [placeholder]="'Select a Delivery Unit'"
-  [options]="['DU1', 'DU2', 'DU3']">
-</app-dropdownfilter>
-<app-dropdownfilter
-  [placeholder]="'Select a Location'"
-  [options]="['Kochi', 'Trivandrum', 'Bangalore']">
-</app-dropdownfilter>
-
-
-  
+<router-outlet></router-outlet>

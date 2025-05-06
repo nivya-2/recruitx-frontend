@@ -1,0 +1,16 @@
+.table-filter{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 32px;
+    padding: 0 70px;
+}
+.filter-container{
+    display: flex;
+    height: 32px;
+}
+.dropdownfilters-container{
+    display: flex;
+    gap: 4%;
+    padding-top: 3px;
+}
