@@ -13,8 +13,8 @@
     padding-right: 3vw;
 }
 .child1{
-    flex:4;
+    flex:2;
 }
-.child2{
-    flex:1;
+.child3{
+    flex:2;
 }

@@ -1,5 +1,12 @@
-<app-header></app-header>
+<app-header [search]="true"></app-header>
+<app-icon-group></app-icon-group>
 <br>
-<app-tablefilter></app-tablefilter>
+
+
+    <div class="base">
+      <app-table [content]="content"></app-table>
+    </div>
+
+
 
 <router-outlet></router-outlet>

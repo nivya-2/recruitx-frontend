@@ -6,7 +6,7 @@ import { MatIconModule } from '@angular/material/icon';
   selector: 'app-icons',
   imports: [CommonModule, MatIconModule],
   templateUrl: './icons.component.html',
-  styleUrls: ['./icons.component.css']
+  styleUrl: './icons.component.css'
 })
 export class IconComponent {
   @Input() name: string = '';                     
