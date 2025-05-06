@@ -1,13 +1,31 @@
-::ng-deep mat-form-field {
-  margin: 1vw;
-  border-radius: 20px;
-  font-size: 16px;
+::ng-deep .mat-mdc-form-field {
+  margin: 0 0.5%;
+  padding: 0;
+}
+
+::ng-deep .mat-mdc-text-field-wrapper {
+  height: 4vh;
+  align-items: center;
+  padding: 0 2% !important;
+}
+
+::ng-deep .mat-mdc-form-field-infix {
+  padding: 0 !important;
+  min-height: unset !important;
 }
 
 ::ng-deep .mat-mdc-select-arrow-wrapper {
   display: none !important;
 }
 
-::ng-deep mat-form-field-appearance-outline mat-form-field-outline {
-  border-radius: 32px; /* or any value you prefer */
+::ng-deep .mat-mdc-select-value {
+  font-size: 14px; /* or whatever size you want */
+}
+
+::ng-deep .mat-mdc-option {
+  font-size: 14px;
+}
+
+::ng-deep .mat-mdc-form-field-label {
+  font-size: 13px;
 }
