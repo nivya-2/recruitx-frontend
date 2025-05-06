@@ -9,10 +9,11 @@ import { HeaderComponent } from './widgets/header/header.component';
 import { SearchbarComponent } from './searchbar/searchbar.component';
 
 import { TableComponent } from './table/table.component';
+import { BreadcrumbsComponent } from "./breadcrumbs/breadcrumbs.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,IconGroupComponent,HeaderTextComponent,ProfileComponent,ProfileBoxComponent,HeaderComponent,IconComponent,SearchbarComponent,TableComponent],
+  imports: [RouterOutlet, IconGroupComponent, HeaderTextComponent, ProfileComponent, ProfileBoxComponent, HeaderComponent, IconComponent, SearchbarComponent, TableComponent, BreadcrumbsComponent],
   templateUrl: './app.component.html',
   styleUrl:'./app.component.css'
 })
