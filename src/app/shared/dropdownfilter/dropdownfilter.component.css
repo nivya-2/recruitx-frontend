@@ -30,6 +30,6 @@
   font-size: 13px;
 }
 
-::ng-deep .mat-mdc-option{
+::ng-deep .mat-mdc-option,.mdc-list-item ,.mdc-list-item--selected,.mat-mdc-option-active{
   font-size: 13px;
 }
