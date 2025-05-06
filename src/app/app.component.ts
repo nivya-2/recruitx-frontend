@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { IconComponent } from './icons/icons.component';
 import { RouterOutlet } from '@angular/router';
 import { SharedModule } from "./shared/shared.module";
 import { ButtonsComponent } from "./shared/buttons/buttons.component";
@@ -7,9 +8,9 @@ import { ClassDirective } from './class.directive';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, ButtonsComponent, SharedModule, DatePickerComponent, ClassDirective],
+  imports: [RouterOutlet, ButtonsComponent, SharedModule, DatePickerComponent, ClassDirective, IconComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   title = 'recruitxfrontend';

@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatSelectModule } from '@angular/material/select';
 import { MatNativeDateModule } from '@angular/material/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormControl } from '@angular/forms';
@@ -24,7 +25,7 @@ export const CUSTOM_DATE_FORMATS = {
 
 @Component({
   selector: 'app-date-picker',
-  imports: [MatFormFieldModule, MatInputModule, MatDatepickerModule, MatNativeDateModule, ReactiveFormsModule],
+  imports: [MatFormFieldModule, MatInputModule, MatDatepickerModule, MatNativeDateModule, ReactiveFormsModule, MatSelectModule],
   templateUrl: './date-picker.component.html',
   styleUrl: './date-picker.component.css',
   providers: [
@@ -35,4 +36,5 @@ export const CUSTOM_DATE_FORMATS = {
 })
 export class DatePickerComponent {
   dateControl = new FormControl();
+  @Input() placeholder: string = "Select date";
 }

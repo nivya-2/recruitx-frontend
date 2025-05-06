@@ -12,8 +12,8 @@ export class ClassDirective {
   }
 
   @Input('appClass')
-  set backgroundColor(newBackgroundColor: string) {
-    this.element.nativeElement.style.backgroundColor = newBackgroundColor;
+  set backgroundColor(newPosition: string) {
+    this.element.nativeElement.style.position = newPosition;
   }
 
 }

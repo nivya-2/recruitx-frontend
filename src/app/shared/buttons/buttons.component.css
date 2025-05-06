@@ -1,16 +1,15 @@
-.fab-custom {
+::ng-deep .mat-icon{
+    position: absolute;
+}
+
+::ng-deep .mdc-button__label{
+    padding-right: 10px;
+}
+
+::ng-deep .mat-mdc-button-persistent-ripple .mdc-button__ripple{
+    width: 20px;
+}
+/* .button{
     display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px; /* adds space between text and icon */
-    width: 100px;
-  }
-  
-  .fab-custom .icon {
-    order: 1;
-  }
-  
-  .fab-custom .text {
-    order: 0;
-  }
-  
+    justify-content: space-between;
+} */
