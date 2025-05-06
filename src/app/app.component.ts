@@ -102,4 +102,18 @@ export class AppComponent {
           }
 
     ];
+
+    displayedColumns: string[] = [
+      'id', 'roleTitle', 'deliveryUnit', 'location', 'openPositions', 'createdDate', 'hiringManager', 'actions'  ];
+      
+        columnLabels: { [key: string]: string } = {
+          id: 'ID',
+          roleTitle: 'Role Title',
+          deliveryUnit: 'Delivery Unit',
+          location: 'Location',
+          openPositions: 'No. Of Open Positions',
+          createdDate: 'Created Date',
+          hiringManager: 'Hiring Manager',
+          actions: 'Actions'
+        };
 }

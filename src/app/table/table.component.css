@@ -70,6 +70,21 @@
     text-align: center !important;
   }
   
+  .stylegenerate{
+
+    background-color: #7B61FF;
+    padding: 15px 9px;
+    width:100px;
+    height: 35px;
+    border-radius: 5px;
+    border: none;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+    color: white;
+
+  }
 
   ::ng-deep .mat-mdc-paginator-container{
 
@@ -84,6 +99,10 @@
      margin: 0 20px;
      padding: 0px;
     }
- 
- 
+
   
+ 
+ /* ::ng-deep .mat-mdc-paginator-page-size{
+  display: none !important;
+ }
+   */

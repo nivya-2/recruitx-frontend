@@ -14,21 +14,13 @@ import { MatPaginator } from '@angular/material/paginator';
 })
 export class TableComponent implements OnInit, AfterViewInit {
 
-  displayedColumns: string[] = [
-'id', 'roleTitle', 'deliveryUnit', 'location', 'openPositions', 'createdDate', 'hiringManager', 'actions'  ];
-  columnLabels: { [key: string]: string } = {
-    id: 'ID',
-    roleTitle: 'Role Title',
-    deliveryUnit: 'Delivery Unit',
-    location: 'Location',
-    openPositions: 'No. Of Open Positions',
-    createdDate: 'Created Date',
-    hiringManager: 'Hiring Manager',
-    actions: 'Actions'
-  };
+ 
   dataSource!: MatTableDataSource<any>;
 
   @Input() content: any[] = [];
+  @Input() displayedColumns: string[] = [];
+  @Input() columnLabels: { [key: string]: string } = {};
+
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort)  sort!: MatSort;
