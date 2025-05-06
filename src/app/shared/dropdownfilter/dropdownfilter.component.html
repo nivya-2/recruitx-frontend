@@ -1,31 +1,6 @@
-<div class="filters-container">
-    <mat-form-field appearance="outline">
-      <mat-select placeholder="Select a Role">
-        <mat-option value="">Select a Role</mat-option>
-        <mat-option value="developer">Developer</mat-option>
-        <mat-option value="designer">Designer</mat-option>
-        <mat-option value="pm">Product Manager</mat-option>
-        <mat-option value="qa">QA Engineer</mat-option>
-        <mat-option value="lead">Team Lead</mat-option>
-        <mat-option value="manager">Project Manager</mat-option>
-      </mat-select>
-    </mat-form-field>
-  
-    <mat-form-field appearance="outline">
-      <mat-select placeholder="Select a Delivery Unit">
-        <mat-option value="">Select a Delivery Unit</mat-option>
-        <mat-option value="DU1">DU1</mat-option>
-        <mat-option value="DU2">DU2</mat-option>
-        <mat-option value="DU3">DU3</mat-option>
-      </mat-select>
-    </mat-form-field>
-  
-    <mat-form-field appearance="outline">
-      <mat-select placeholder="Select by Location">
-        <mat-option value="">Select by Location</mat-option>
-        <mat-option value="Kochi">Kochi</mat-option>
-        <mat-option value="Trivandrum">Trivandrum</mat-option>
-        <mat-option value="Bangalore">Bangalore</mat-option>
-      </mat-select>
-    </mat-form-field>
-  </div>
+<mat-form-field appearance="outline" class="custom-select">
+  <mat-select [placeholder]="placeholder">
+    <mat-option *ngFor="let option of options" [value]="option">{{ option }}</mat-option>
+  </mat-select>
+  <mat-icon matSuffix class="custom-icon">keyboard_arrow_down</mat-icon>
+</mat-form-field>

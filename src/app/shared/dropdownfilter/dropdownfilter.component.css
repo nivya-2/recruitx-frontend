@@ -1,10 +1,13 @@
-.filters-container {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-  }
-  
-  mat-form-field {
-    min-width: 200px;
-  }
-  
+::ng-deep mat-form-field {
+  margin: 1vw;
+  border-radius: 20px;
+  font-size: 16px;
+}
+
+::ng-deep .mat-mdc-select-arrow-wrapper {
+  display: none !important;
+}
+
+::ng-deep mat-form-field-appearance-outline mat-form-field-outline {
+  border-radius: 32px; /* or any value you prefer */
+}
