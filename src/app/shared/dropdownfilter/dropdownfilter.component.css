@@ -4,9 +4,9 @@
 }
 
 ::ng-deep .mat-mdc-text-field-wrapper {
-  height: 4vh;
+  height: 6vh;
   align-items: center;
-  padding: 0 2% !important;
+  padding: 1% 6% !important;
 }
 
 ::ng-deep .mat-mdc-form-field-infix {
