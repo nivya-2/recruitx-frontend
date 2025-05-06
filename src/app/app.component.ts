@@ -7,13 +7,16 @@ import { ProfileComponent } from './widgets/profile/profile.component';
 import { ProfileBoxComponent } from './widgets/profile-box/profile-box.component';
 import { HeaderComponent } from './widgets/header/header.component';
 import { SearchbarComponent } from './searchbar/searchbar.component';
-
 import { TableComponent } from './table/table.component';
+import { SharedModule } from "./shared/shared.module";
+import { ButtonsComponent } from "./shared/buttons/buttons.component";
+import { DatePickerComponent } from "./shared/date-picker/date-picker.component";
+import { ClassDirective } from './class.directive';
 import { BreadcrumbsComponent } from "./breadcrumbs/breadcrumbs.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, IconGroupComponent, HeaderTextComponent, ProfileComponent, ProfileBoxComponent, HeaderComponent, IconComponent, SearchbarComponent, TableComponent, BreadcrumbsComponent],
+  imports: [RouterOutlet,IconGroupComponent,HeaderTextComponent,ProfileComponent,ProfileBoxComponent,HeaderComponent,IconComponent,SearchbarComponent,TableComponent,ButtonsComponent,BreadcrumbsComponent, SharedModule, DatePickerComponent, ClassDirective],
   templateUrl: './app.component.html',
   styleUrl:'./app.component.css'
 })
@@ -102,5 +105,16 @@ export class AppComponent {
 
           }
 
+    ];
+
+    columns: Array<{key: string, label: string}> = [
+      { key: 'id', label: 'ID' },
+      { key: 'roleTitle', label: 'Role Title' },
+      { key: 'deliveryUnit', label: 'Delivery Unit' },
+      { key: 'location', label: 'Location' },
+      { key: 'openPositions', label: 'No. Of Open Positions' },
+      { key: 'createdDate', label: 'Created Date' },
+      { key: 'hiringManager', label: 'Hiring Manager' },
+      { key: 'actions', label: 'Actions' }
     ];
 }
