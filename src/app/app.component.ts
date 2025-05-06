@@ -5,10 +5,12 @@ import { HeaderTextComponent } from './widgets/header-text/header-text.component
 import { ProfileComponent } from './widgets/profile/profile.component';
 import { ProfileBoxComponent } from './widgets/profile-box/profile-box.component';
 import { HeaderComponent } from './widgets/header/header.component';
+import { SearchbarComponent } from './searchbar/searchbar.component';
+
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,HeaderTextComponent,ProfileComponent,ProfileBoxComponent,HeaderComponent,IconComponent],
+  imports: [RouterOutlet,HeaderTextComponent,ProfileComponent,ProfileBoxComponent,HeaderComponent,IconComponent,SearchbarComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
