@@ -16,11 +16,12 @@ export class TableComponent implements OnInit, AfterViewInit {
 
  
   dataSource!: MatTableDataSource<any>;
+  displayedColumns: string[] = [];
+
 
   @Input() content: any[] = [];
-  @Input() displayedColumns: string[] = [];
-  @Input() columnLabels: { [key: string]: string } = {};
-
+  @Input() columns: any[] = [];
+ 
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort)  sort!: MatSort;
@@ -32,6 +33,7 @@ export class TableComponent implements OnInit, AfterViewInit {
   
   ngOnInit(): void {
     this.dataSource = new MatTableDataSource(this.content);
+    this.displayedColumns = this.columns.map(col => col.key);
 
   }
 
