@@ -1,0 +1,16 @@
+.fab-custom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px; /* adds space between text and icon */
+    width: 100px;
+  }
+  
+  .fab-custom .icon {
+    order: 1;
+  }
+  
+  .fab-custom .text {
+    order: 0;
+  }
+  
