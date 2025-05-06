@@ -1,5 +1,6 @@
 <!-- <p>table works!</p> -->
-<table mat-table [dataSource]="dataSource" matSort class='tableDesign mat-elevation-z16'>
+<div class="mat-elevation-z16 ">
+<table mat-table [dataSource]="dataSource" matSort class='tableDesign'>
   
     <ng-container *ngFor="let column of displayedColumns">
       <ng-container [matColumnDef]="column">
@@ -16,3 +17,11 @@
     <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
 
 </table>
+<mat-paginator 
+    [pageSizeOptions]="[5, 10, 20]"
+    [pageSize]="5" 
+    [length]="content.length"
+    showFirstLastButtons
+    aria-label="Select page">
+  </mat-paginator>
+</div>
