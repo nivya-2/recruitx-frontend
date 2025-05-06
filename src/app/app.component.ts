@@ -8,10 +8,9 @@ import { HeaderComponent } from './widgets/header/header.component';
 
 @Component({
   selector: 'app-root',
-  imports: [IconComponent],
-  imports: [RouterOutlet,HeaderTextComponent,ProfileComponent,ProfileBoxComponent,HeaderComponent],
+  imports: [RouterOutlet,HeaderTextComponent,ProfileComponent,ProfileBoxComponent,HeaderComponent,IconComponent],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrl: './app.component.css'
 })
 export class AppComponent {
   title = 'recruitxfrontend';

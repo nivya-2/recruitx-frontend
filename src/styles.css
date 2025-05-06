@@ -2,9 +2,9 @@
 
 html, body { height: 100%; }
 
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; }
 .montserrat-global {
-    font-family: "Montserrat", sans-serif;
+    font-family: "Montserrat";
     font-optical-sizing: auto;
     font-weight: normal;
     font-style: normal;
