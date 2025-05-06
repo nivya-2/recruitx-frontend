@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { IconComponent } from './icons/icons.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [IconComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   title = 'recruitxfrontend';
