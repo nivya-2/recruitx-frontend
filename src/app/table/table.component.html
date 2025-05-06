@@ -9,7 +9,9 @@
          </th>
         <td mat-cell [ngClass]="{'center-text': column === 'openPositions'}" *matCellDef="let element">
             {{ column === 'actions' ? '' : element[column] }}
-            <button *ngIf="column === 'actions'" mat-button>Action</button>
+            <button *ngIf="column === 'actions' && element[column] ==='generate'" mat-button>Generate</button>
+            <button *ngIf="column === 'actions' && element[column] ==='draft'" mat-button>Draft</button>
+
       </ng-container>
   </ng-container>
   

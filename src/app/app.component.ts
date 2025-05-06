@@ -19,6 +19,7 @@ export class AppComponent {
       openPositions: 5, 
       createdDate: '05-05-2025', 
       hiringManager: 'John Doe',
+      actions:'generate',
       },
       {  id: 'JR2025-113', 
         roleTitle: 'UX Designer',
@@ -27,6 +28,8 @@ export class AppComponent {
         openPositions: 7, 
         createdDate: '05-05-2025', 
         hiringManager: 'John James',
+        actions:'generate',
+
       },
       {  id: 'JR2025-114', 
           roleTitle: 'Sales Manager',
@@ -35,6 +38,8 @@ export class AppComponent {
           openPositions: 9, 
           createdDate: '09-05-2025', 
           hiringManager: 'Alan Smith',
+          actions:'generate',
+
       },
       {  id: 'JR2025-115', 
             roleTitle: 'Junior HR',
@@ -43,6 +48,8 @@ export class AppComponent {
             openPositions: 9, 
             createdDate: '09-05-2025', 
             hiringManager: 'James Roy',
+            actions:'draft',
+
       },
       { id: 'JR2025-116', 
               roleTitle: 'AI Engineer',
@@ -51,6 +58,8 @@ export class AppComponent {
               openPositions: 7, 
               createdDate: '05-07-2025', 
               hiringManager: 'James Jacob',
+              actions:'generate',
+
             },
             {  id: 'JR2025-117', 
                 roleTitle: 'UX Designer',
@@ -59,6 +68,8 @@ export class AppComponent {
                 openPositions: 7, 
                 createdDate: '05-08-2025', 
                 hiringManager: 'John James',
+                actions:'draft',
+
             },
             {  id: 'JR2025-119', 
               roleTitle: 'UI Designer',
@@ -67,6 +78,8 @@ export class AppComponent {
               openPositions: 7, 
               createdDate: '15-05-2025', 
               hiringManager: 'John James',
+              actions:'draft',
+
               },
         {  id: 'JR2025-119', 
           roleTitle: 'Data Analyst',
@@ -75,6 +88,8 @@ export class AppComponent {
           openPositions: 11, 
           createdDate: '25-06-2025', 
           hiringManager: 'John James',
+          actions:'generate',
+
           }
 
     ];
