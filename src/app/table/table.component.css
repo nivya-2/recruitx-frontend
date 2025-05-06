@@ -73,17 +73,24 @@
   .stylegenerate{
 
     background-color: #7B61FF;
-    padding: 15px 9px;
+    /* padding: 15px 9px; */
     width:100px;
     height: 35px;
     border-radius: 5px;
-    border: none;
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    font-size: 13px;
-    color: white;
 
+  }
+  ::ng-deep .mat-mdc-outlined-button{
+    border: none !important;
+    font-family: none !important;
+    font-weight: none !important;
+    font-size: 13px !important;
+    color: white !important;
+  }
+  ::ng-deep .mdc-button__label{
+    padding-right: 0% !important;
   }
 
   ::ng-deep .mat-mdc-paginator-container{

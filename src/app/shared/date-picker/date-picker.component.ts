@@ -7,7 +7,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormControl } from '@angular/forms';
 import { DateAdapter,MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
-import { MatMomentDateModule, MomentDateAdapter } from '@angular/material-moment-adapter';
+// import { MatMomentDateModule, MomentDateAdapter } from '@angular/material-moment-adapter';
 
 
 // Define custom date formats
@@ -28,11 +28,11 @@ export const CUSTOM_DATE_FORMATS = {
   imports: [MatFormFieldModule, MatInputModule, MatDatepickerModule, MatNativeDateModule, ReactiveFormsModule, MatSelectModule],
   templateUrl: './date-picker.component.html',
   styleUrl: './date-picker.component.css',
-  providers: [
-    { provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE] },
-    { provide: MAT_DATE_FORMATS, useValue: CUSTOM_DATE_FORMATS },
-    { provide: MAT_DATE_LOCALE, useValue: 'en-IN' } 
-  ]
+  // providers: [
+  //   { provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE] },
+  //   { provide: MAT_DATE_FORMATS, useValue: CUSTOM_DATE_FORMATS },
+  //   { provide: MAT_DATE_LOCALE, useValue: 'en-IN' } 
+  // ]
 })
 export class DatePickerComponent {
   dateControl = new FormControl();

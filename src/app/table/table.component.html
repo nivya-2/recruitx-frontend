@@ -9,8 +9,8 @@
          </th>
         <td mat-cell [ngClass]="{'center-text': column.key === 'openPositions'}" *matCellDef="let element">
             {{ column.key === 'actions' ? '' : element[column.key] }}
-            <button *ngIf="column.key === 'actions' && element[column.key] ==='generate'" class="stylegenerate" mat-button>Generate</button>
-            <button *ngIf="column.key === 'actions' && element[column.key] ==='draft'" class="stylegenerate" mat-button>Draft</button>
+            <app-buttons *ngIf="column.key === 'actions' && element[column.key] ==='generate'" class="stylegenerate">Generate</app-buttons>
+            <app-buttons *ngIf="column.key === 'actions' && element[column.key] ==='draft'" class="stylegenerate">Draft</app-buttons>
 
       </ng-container>
   </ng-container>

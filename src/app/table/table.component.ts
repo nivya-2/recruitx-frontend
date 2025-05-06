@@ -3,12 +3,15 @@ import { AfterViewInit, Component, Input, OnInit, ViewChild } from '@angular/cor
 import { MatSort, MatSortModule } from '@angular/material/sort';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
+import { SharedModule } from "../shared/shared.module";
+import { ButtonsComponent } from "../shared/buttons/buttons.component";
+import { table } from 'console';
 
 
 
 @Component({
-  selector: 'app-table',
-  imports: [MatTableModule,MatSort,CommonModule,MatSortModule,MatPaginator],
+  selector:'app-table',
+  imports: [MatTableModule, MatSort, CommonModule, MatSortModule, MatPaginator, ButtonsComponent],
   templateUrl: './table.component.html',
   styleUrl: './table.component.css'
 })
