@@ -1,0 +1,15 @@
+::ng-deep .mat-icon{
+    position: absolute;
+}
+
+::ng-deep .mdc-button__label{
+    padding-right: 10px;
+}
+
+::ng-deep .mat-mdc-button-persistent-ripple .mdc-button__ripple{
+    width: 20px;
+}
+/* .button{
+    display: flex;
+    justify-content: space-between;
+} */
