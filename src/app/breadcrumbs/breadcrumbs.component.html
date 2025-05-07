@@ -1,0 +1,16 @@
+<div class="breadcrumb-container">
+    <ng-container *ngFor="let item of breadcrumbTrail; let last = last">
+      <div class="breadcrumb-item">
+        <app-icons
+          *ngIf="item.icon"
+          [name]="item.icon"
+          size="24px"
+          customColor="#7B61FF">
+        </app-icons>
+        <span class="breadcrumb-text" *ngIf="item.label" [ngClass]="{ 'active': last }">
+          {{ item.label }}
+        </span>
+      </div>
+    </ng-container>
+  </div>
+  

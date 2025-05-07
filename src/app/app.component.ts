@@ -12,10 +12,11 @@ import { SharedModule } from "./shared/shared.module";
 import { ButtonsComponent } from "./shared/buttons/buttons.component";
 import { DatePickerComponent } from "./shared/date-picker/date-picker.component";
 import { ClassDirective } from './class.directive';
+import { BreadcrumbsComponent } from "./breadcrumbs/breadcrumbs.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,IconGroupComponent,HeaderTextComponent,ProfileComponent,ProfileBoxComponent,HeaderComponent,IconComponent,SearchbarComponent,TableComponent, ButtonsComponent, SharedModule, DatePickerComponent, ClassDirective],
+  imports: [RouterOutlet,IconGroupComponent,HeaderTextComponent,ProfileComponent,ProfileBoxComponent,HeaderComponent,IconComponent,SearchbarComponent,TableComponent,ButtonsComponent,BreadcrumbsComponent, SharedModule, DatePickerComponent, ClassDirective],
   templateUrl: './app.component.html',
   styleUrl:'./app.component.css'
 })
