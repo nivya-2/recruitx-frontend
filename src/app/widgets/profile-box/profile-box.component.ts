@@ -10,5 +10,5 @@ import { HeaderTextComponent } from '../header-text/header-text.component';
 })
 export class ProfileBoxComponent {
 @Input() fullName: string = 'Advait Kumar';
-@Input() role: string = 'Recruiter Lead';
+@Input() role: string = 'Recruiter';
 }
