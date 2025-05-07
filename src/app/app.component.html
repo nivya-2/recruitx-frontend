@@ -2,11 +2,37 @@
 <app-icon-group></app-icon-group>
 <br>
 
-
-    <div class="base">
-      <app-table [content]="content"></app-table>
+<div class="base">
+<div class="mat-elevation-z16 ">
+<div class="ui container">
+  
+    <div class="ui secondary pointing menu">
+      <nav mat-tab-nav-bar [tabPanel]="tabPanel">
+        <a mat-tab-link
+          routerLink="/pendingjdgeneration"
+          routerLinkActive #rla1="routerLinkActive"
+          class="item"
+          [active]="rla1.isActive">Pending JD Generation</a>
+        <a mat-tab-link
+          routerLink="/openjd"
+          routerLinkActive #rla2="routerLinkActive"
+          class="item"
+          [active]="rla2.isActive">Open JD</a>
+        <a mat-tab-link
+          routerLink="/closedjd"
+          routerLinkActive #rla3="routerLinkActive"
+          class="item"
+          [active]="rla3.isActive">Closed JD</a>
+      </nav>
+      <!-- <a routerLink="/elements" routerLinkActive="active" class="item">Elements</a>
+      <a routerLink="/collections" routerLinkActive="active" class="item">Collections</a> -->
     </div>
-
-
-
-<router-outlet></router-outlet>
+    <mat-tab-nav-panel #tabPanel class="tab-panel">
+      <router-outlet></router-outlet>
+    </mat-tab-nav-panel>
+  </div>
+    <!-- <div class="base">
+      <app-table [content]="content"></app-table>
+    </div> -->
+</div>
+</div>
