@@ -1,0 +1,31 @@
+.dashboard-content {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    margin-left: 10%;
+    margin-right: 2%;
+  }
+  
+  .left-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .right-section {
+    flex: 2;
+  }
+  
+  .box {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    min-height: 200px; /* adjust as needed */
+  }
+  .right-section .box{
+    height: 92%;
+  }
+  .left-section .box{
+    height: 45%;
+  }
