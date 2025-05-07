@@ -19,6 +19,12 @@ import { TableComponent } from './table/table.component';
 import { BreadcrumbsComponent } from "./breadcrumbs/breadcrumbs.component";
 import { DashboardHomeComponent } from './pages/dashboard/dashboard-home/dashboard-home.component';
 
+
+import {  ViewChild, AfterViewInit } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
+import { MatPaginator } from '@angular/material/paginator';
+
+
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet, DashboardHomeComponent,HeaderTextComponent, ProfileComponent, IconGroupComponent, ProfileBoxComponent, HeaderComponent, IconComponent, DropdownfilterComponent, ButtonsComponent, SharedModule, DatePickerComponent, ClassDirective, TablefilterComponent, SearchbarComponent, TableComponent, MatTabsModule, RouterModule, BreadcrumbsComponent],
