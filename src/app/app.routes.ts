@@ -14,8 +14,21 @@ export const routes: Routes = [
     //         import('./closedjd/closedjd.module').then((m) => m.ClosedjdModule)
     // },
     {
+        path: '',
+        pathMatch: 'full',
+        redirectTo: 'dashboard'
+      },
+    {
         path: 'track', loadChildren: () =>
             import('./pages/track/track.module').then((m) => m.TrackModule)
+    },
+    {
+        path: 'schedule', loadChildren: () =>
+            import('./pages/schedule/schedule.module').then((m) => m.ScheduleModule)
+    },
+    {
+        path: 'dashboard', loadChildren: () =>
+            import('./pages/dashboard/dashboard.module').then((m) => m.DashboardModule)
     }
 
 ];
