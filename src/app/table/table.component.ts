@@ -3,33 +3,29 @@ import { AfterViewInit, Component, Input, OnInit, ViewChild } from '@angular/cor
 import { MatSort, MatSortModule } from '@angular/material/sort';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
+import { SharedModule } from "../shared/shared.module";
+import { ButtonsComponent } from "../shared/buttons/buttons.component";
+import { table } from 'console';
 import { TablefilterComponent } from "../shared/tablefilter/tablefilter.component";
 
 
 
 @Component({
-  selector: 'app-table',
-  imports: [MatTableModule, MatSort, CommonModule, MatSortModule, MatPaginator, TablefilterComponent],
+  selector:'app-table',
+  imports: [MatTableModule, MatSort, CommonModule, MatSortModule, MatPaginator, ButtonsComponent,TablefilterComponent],
   templateUrl: './table.component.html',
   styleUrl: './table.component.css'
 })
 export class TableComponent implements OnInit, AfterViewInit {
 
-  displayedColumns: string[] = [
-'id', 'roleTitle', 'deliveryUnit', 'location', 'openPositions', 'createdDate', 'hiringManager', 'actions'  ];
-  columnLabels: { [key: string]: string } = {
-    id: 'ID',
-    roleTitle: 'Role Title',
-    deliveryUnit: 'Delivery Unit',
-    location: 'Location',
-    openPositions: 'No. Of Open Positions',
-    createdDate: 'Created Date',
-    hiringManager: 'Hiring Manager',
-    actions: 'Actions'
-  };
+ 
   dataSource!: MatTableDataSource<any>;
+  displayedColumns: string[] = [];
+
 
   @Input() content: any[] = [];
+  @Input() columns: any[] = [];
+ 
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort)  sort!: MatSort;
@@ -41,6 +37,7 @@ export class TableComponent implements OnInit, AfterViewInit {
   
   ngOnInit(): void {
     this.dataSource = new MatTableDataSource(this.content);
+    this.displayedColumns = this.columns.map(col => col.key);
 
   }
 

@@ -4,14 +4,13 @@
 .base{
     /* background-color: #E2E5EC; */
     min-height: 100%;
-    padding-left: 6rem;
-    padding-top: 2rem;
+    /* padding-top: 2rem; */
 }
-.routing-heading-table-filter-container{
+/* .routing-heading-table-filter-container{
     background-color: white;
     border-radius: 7px;
     margin-left: 70px;
-}
+} */
 
 .ui {
     display: flex;
@@ -21,13 +20,17 @@
   }
 .ui nav{
     width: 50%;
-    margin-left: 70px;
+    margin-bottom: 1vw;
+    margin-left: 0.5vw;
 }
 
 .mdc-tab{
     padding: 0px;
 }
   
+.mat-mdc-tab-header.mat-mdc-tab-nav-bar-stretch-tabs .mat-mdc-tab-link{
+    flex-grow: 0.1;
+}
   /* .tab-panel {
     margin-top: 16px;
     padding: 24px;
@@ -47,4 +50,5 @@
     background-color: white !important;
     margin:2rem;
     padding-bottom: 1rem;
+    margin-left: 6rem;
   }

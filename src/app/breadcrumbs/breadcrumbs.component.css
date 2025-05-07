@@ -1,0 +1,24 @@
+.breadcrumb-container {
+    display: flex;
+    align-items: center;
+    padding: .5rem .75rem;
+    border-radius: .25rem;
+    margin-left: 11vw;
+  }
+  
+  .breadcrumb-item {
+    display: flex;
+    align-items: center;
+    margin-right: 1rem;
+  }
+ 
+  .breadcrumb-text {
+    color: #7B61FF;
+    font-weight: 500;
+    margin-left: 1rem;
+  }
+  
+  .breadcrumb-text.active {
+    font-weight: 700;
+  }
+  

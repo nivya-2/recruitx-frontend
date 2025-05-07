@@ -16,10 +16,11 @@ import { SearchbarComponent } from './searchbar/searchbar.component';
 import { MatTabsModule } from '@angular/material/tabs'
 
 import { TableComponent } from './table/table.component';
+import { BreadcrumbsComponent } from "./breadcrumbs/breadcrumbs.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,HeaderTextComponent,ProfileComponent,IconGroupComponent,HeaderTextComponent,ProfileBoxComponent,HeaderComponent,IconComponent, DropdownfilterComponent, ButtonsComponent, SharedModule, DatePickerComponent, ClassDirective, IconComponent,TablefilterComponent,SearchbarComponent,TableComponent, MatTabsModule, RouterModule],
+  imports: [RouterOutlet, HeaderTextComponent, ProfileComponent, IconGroupComponent, ProfileBoxComponent, HeaderComponent, IconComponent, DropdownfilterComponent, ButtonsComponent, SharedModule, DatePickerComponent, ClassDirective, TablefilterComponent, SearchbarComponent, TableComponent, MatTabsModule, RouterModule, BreadcrumbsComponent],
   templateUrl: './app.component.html',
   styleUrl:'./app.component.css'
 })
@@ -108,5 +109,16 @@ export class AppComponent {
 
           }
 
+    ];
+
+    columns: Array<{key: string, label: string}> = [
+      { key: 'id', label: 'ID' },
+      { key: 'roleTitle', label: 'Role Title' },
+      { key: 'deliveryUnit', label: 'Delivery Unit' },
+      { key: 'location', label: 'Location' },
+      { key: 'openPositions', label: 'No. Of Open Positions' },
+      { key: 'createdDate', label: 'Created Date' },
+      { key: 'hiringManager', label: 'Hiring Manager' },
+      { key: 'actions', label: 'Actions' }
     ];
 }

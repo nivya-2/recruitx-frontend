@@ -3,9 +3,10 @@ import { TableComponent } from "../../table/table.component";
 import { AppComponent } from '../../app.component';
 import { WidgetsModule } from "../../widgets/widgets.module";
 import { HeaderTextComponent } from "../../widgets/header-text/header-text.component";
+import { TablefilterComponent } from '../../shared/tablefilter/tablefilter.component';
 
 @Component({
-  imports: [TableComponent, AppComponent, HeaderTextComponent, WidgetsModule],
+  imports: [TableComponent, AppComponent, HeaderTextComponent, WidgetsModule,TablefilterComponent],
   templateUrl: './pendingjd-home.component.html',
   styleUrl: './pendingjd-home.component.css'
 })
@@ -92,6 +93,17 @@ export class PendingjdHomeComponent {
 
           }
 
+    ];
+
+    columns: Array<{key: string, label: string}> = [
+      { key: 'id', label: 'ID' },
+      { key: 'roleTitle', label: 'Role Title' },
+      { key: 'deliveryUnit', label: 'Delivery Unit' },
+      { key: 'location', label: 'Location' },
+      { key: 'openPositions', label: 'No. Of Open Positions' },
+      { key: 'createdDate', label: 'Created Date' },
+      { key: 'hiringManager', label: 'Hiring Manager' },
+      { key: 'actions', label: 'Actions' }
     ];
 
 }

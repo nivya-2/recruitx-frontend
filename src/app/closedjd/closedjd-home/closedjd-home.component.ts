@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { WidgetsModule } from "../../widgets/widgets.module";
 import { TableComponent } from "../../table/table.component";
+import { TablefilterComponent } from '../../shared/tablefilter/tablefilter.component';
 
 @Component({
   selector: 'app-closedjd-home',
-  imports: [WidgetsModule, TableComponent],
+  imports: [WidgetsModule, TableComponent,TablefilterComponent],
   templateUrl: './closedjd-home.component.html',
   styleUrl: './closedjd-home.component.css'
 })
@@ -90,5 +91,16 @@ export class ClosedjdHomeComponent {
 
           }
 
+    ];
+
+    columns: Array<{key: string, label: string}> = [
+      { key: 'id', label: 'ID' },
+      { key: 'roleTitle', label: 'Role Title' },
+      { key: 'deliveryUnit', label: 'Delivery Unit' },
+      { key: 'location', label: 'Location' },
+      { key: 'openPositions', label: 'No. Of Open Positions' },
+      { key: 'createdDate', label: 'Created Date' },
+      { key: 'hiringManager', label: 'Hiring Manager' },
+      { key: 'actions', label: 'Actions' }
     ];
 }

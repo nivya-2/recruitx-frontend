@@ -1,11 +1,11 @@
 .navbar {
     background-color: #7B61FF;
     width: 5rem;
-    height: 100vh;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: absolute;
+    position: fixed;
     top:0;
   }
   
