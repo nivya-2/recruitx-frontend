@@ -1,4 +1,4 @@
-<!-- <div style="height: 100%;
+<div style="height: 100%;
   position: relative;">
 <app-header [search]="false"></app-header>
 <app-icon-group></app-icon-group>
@@ -12,17 +12,17 @@
     <div class="ui secondary pointing menu">
       <nav mat-tab-nav-bar [tabPanel]="tabPanel">
         <a mat-tab-link
-          routerLink="/pendingjdgeneration"
+          routerLink="/track/pendingjdgeneration"
           routerLinkActive #rla1="routerLinkActive"
           class="item"
           [active]="rla1.isActive">Pending JD Generation</a>
         <a mat-tab-link
-          routerLink="/openjd"
+          routerLink="/track/openjd"
           routerLinkActive #rla2="routerLinkActive"
           class="item"
           [active]="rla2.isActive">Open JD</a>
         <a mat-tab-link
-          routerLink="/closedjd"
+          routerLink="/track/closedjd"
           routerLinkActive #rla3="routerLinkActive"
           class="item"
           [active]="rla3.isActive">Closed JD</a>
@@ -36,5 +36,4 @@
    
 </div>
 </div>
-</div> -->
-<router-outlet></router-outlet>
+</div>
