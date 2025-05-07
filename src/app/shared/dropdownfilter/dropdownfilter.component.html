@@ -1,0 +1,6 @@
+<mat-form-field appearance="outline" class="custom-select">
+  <mat-select [placeholder]="placeholder">
+    <mat-option *ngFor="let option of options" [value]="option">{{ option }}</mat-option>
+  </mat-select>
+  <app-icons matSuffix name="keyboard_arrow_down" customColor="#636363" size="20"></app-icons>
+</mat-form-field>

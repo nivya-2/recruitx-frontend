@@ -1,8 +1,12 @@
-<div>
-    <app-buttons>Clear All<app-icons appClass="absolute" name="clear" customColor="black" size="20px"></app-icons></app-buttons>
-</div>
+<app-header [search]="true"></app-header>
+<app-icon-group></app-icon-group>
 <br>
-<div>
-    <app-date-picker></app-date-picker>
-</div>
+
+
+    <div class="base">
+      <app-table [content]="content"></app-table>
+    </div>
+
+
+
 <router-outlet></router-outlet>

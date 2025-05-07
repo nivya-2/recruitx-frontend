@@ -1,0 +1,30 @@
+<!-- <p>table works!</p> -->
+<div class="mat-elevation-z16 ">
+  <app-tablefilter></app-tablefilter>
+<table mat-table [dataSource]="dataSource" matSort class='tableDesign'>
+  
+    <ng-container *ngFor="let column of displayedColumns">
+      <ng-container [matColumnDef]="column">
+        <th mat-header-cell *matHeaderCellDef>
+            <div [mat-sort-header]="column" [disabled]="column === 'actions'"> {{ columnLabels[column] }}</div>
+         </th>
+        <td mat-cell [ngClass]="{'center-text': column === 'openPositions'}" *matCellDef="let element">
+            {{ column === 'actions' ? '' : element[column] }}
+            <button *ngIf="column === 'actions' && element[column] ==='generate'" mat-button>Generate</button>
+            <button *ngIf="column === 'actions' && element[column] ==='draft'" mat-button>Draft</button>
+
+      </ng-container>
+  </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+
+</table>
+<mat-paginator 
+    [pageSizeOptions]="[5, 10, 20]"
+    [pageSize]="5" 
+    [length]="content.length"
+    showFirstLastButtons
+    aria-label="Select page">
+  </mat-paginator>
+</div>

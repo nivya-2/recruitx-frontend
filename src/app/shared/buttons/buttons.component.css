@@ -1,12 +1,12 @@
-::ng-deep .mat-icon{
+::ng-deep .button .mat-icon{
     position: absolute;
 }
 
-::ng-deep .mdc-button__label{
+::ng-deep .button .mdc-button__label{
     padding-right: 10px;
 }
 
-::ng-deep .mat-mdc-button-persistent-ripple .mdc-button__ripple{
+::ng-deep .button .mat-mdc-button-persistent-ripple .mdc-button__ripple{
     width: 20px;
 }
 /* .button{
