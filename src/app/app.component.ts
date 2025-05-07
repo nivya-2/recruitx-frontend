@@ -18,6 +18,12 @@ import { MatTabsModule } from '@angular/material/tabs'
 import { TableComponent } from './table/table.component';
 import { BreadcrumbsComponent } from "./breadcrumbs/breadcrumbs.component";
 
+
+import {  ViewChild, AfterViewInit } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
+import { MatPaginator } from '@angular/material/paginator';
+
+
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet, HeaderTextComponent, ProfileComponent, IconGroupComponent, ProfileBoxComponent, HeaderComponent, IconComponent, DropdownfilterComponent, ButtonsComponent, SharedModule, DatePickerComponent, ClassDirective, TablefilterComponent, SearchbarComponent, TableComponent, MatTabsModule, RouterModule, BreadcrumbsComponent],
@@ -121,4 +127,30 @@ export class AppComponent {
       { key: 'hiringManager', label: 'Hiring Manager' },
       { key: 'actions', label: 'Actions' }
     ];
+
+   
+    displayedColumns = this.columns.map(c => c.key);
+  
+    dataSource = new MatTableDataSource(this.content);
+    selectedRole: string = '';
+    roleOptions = [...new Set(this.content.map(item => item.roleTitle))]; // unique role titles
+  
+    @ViewChild(MatPaginator) paginator!: MatPaginator;
+  
+    ngAfterViewInit() {
+      this.dataSource.paginator = this.paginator;
+    }
+  
+    applyRoleFilter() {
+      if (this.selectedRole) {
+        this.dataSource.data = this.content.filter(item => item.roleTitle === this.selectedRole);
+      } else {
+        this.dataSource.data = this.content;
+      }
+  
+      // Reset paginator to first page
+      if (this.paginator) {
+        this.paginator.firstPage();
+      }
+    }
 }
