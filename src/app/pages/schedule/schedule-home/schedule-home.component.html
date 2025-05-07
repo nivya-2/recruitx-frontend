@@ -1,1 +1,14 @@
-<p>schedule-home works!</p>
+<div style="height: 100%;
+  position: relative;">
+<app-header [search]="false"></app-header>
+<app-icon-group></app-icon-group>
+<br>
+<app-breadcrumbs></app-breadcrumbs>
+<div class="base">
+ 
+<div class="mat-elevation-z16 ">
+    <app-tablefilter></app-tablefilter>
+    <app-table [content]="scheduledInterviews"[columns]="scheduleColumns"></app-table>
+
+</div>
+</div>

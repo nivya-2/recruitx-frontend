@@ -1,0 +1,15 @@
+.mat-elevation-z16{
+ 
+    max-width: 1220px;
+    max-height: 840px;
+    border-radius: 10px; 
+    overflow: hidden;    
+    min-width: 0% !important;
+    box-shadow: none !important;
+    background-color: white !important;
+    margin:2rem;
+    margin-top: 1vw;
+    padding-bottom: 1vw;
+    margin-left: 6rem;
+    padding-top: 2vw;
+  }
