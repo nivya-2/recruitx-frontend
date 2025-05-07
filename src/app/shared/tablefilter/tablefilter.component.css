@@ -1,0 +1,15 @@
+.table-filter{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 32px;
+}
+.filter-container{
+    display: flex;
+    height: 32px;
+}
+.dropdownfilters-container{
+    display: flex;
+    gap: 2%;  
+    padding-top: 3px;
+}

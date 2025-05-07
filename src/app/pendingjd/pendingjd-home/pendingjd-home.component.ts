@@ -1,32 +1,16 @@
-import { Component } from '@angular/core';
-import { IconComponent } from './icons/icons.component';
-import { IconGroupComponent } from "./icon-group/icon-group.component";
-import { RouterModule, RouterOutlet } from '@angular/router';
-import { SharedModule } from "./shared/shared.module";
-import { ButtonsComponent } from "./shared/buttons/buttons.component";
-import { DatePickerComponent } from "./shared/date-picker/date-picker.component";
-import { ClassDirective } from './class.directive';
-import { HeaderTextComponent } from './widgets/header-text/header-text.component';
-import { ProfileComponent } from './widgets/profile/profile.component';
-import { ProfileBoxComponent } from './widgets/profile-box/profile-box.component';
-import { HeaderComponent } from './widgets/header/header.component';
-import { DropdownfilterComponent } from "./shared/dropdownfilter/dropdownfilter.component";
-import { TablefilterComponent } from './shared/tablefilter/tablefilter.component';
-import { SearchbarComponent } from './searchbar/searchbar.component';
-import { MatTabsModule } from '@angular/material/tabs'
-
-import { TableComponent } from './table/table.component';
-import { BreadcrumbsComponent } from "./breadcrumbs/breadcrumbs.component";
+import { Component, Input } from '@angular/core';
+import { TableComponent } from "../../table/table.component";
+import { AppComponent } from '../../app.component';
+import { WidgetsModule } from "../../widgets/widgets.module";
+import { HeaderTextComponent } from "../../widgets/header-text/header-text.component";
+import { TablefilterComponent } from '../../shared/tablefilter/tablefilter.component';
 
 @Component({
-  selector: 'app-root',
-  imports: [RouterOutlet, HeaderTextComponent, ProfileComponent, IconGroupComponent, ProfileBoxComponent, HeaderComponent, IconComponent, DropdownfilterComponent, ButtonsComponent, SharedModule, DatePickerComponent, ClassDirective, TablefilterComponent, SearchbarComponent, TableComponent, MatTabsModule, RouterModule, BreadcrumbsComponent],
-  templateUrl: './app.component.html',
-  styleUrl:'./app.component.css'
+  imports: [TableComponent, AppComponent, HeaderTextComponent, WidgetsModule,TablefilterComponent],
+  templateUrl: './pendingjd-home.component.html',
+  styleUrl: './pendingjd-home.component.css'
 })
-export class AppComponent {
-
-  title = 'recruitxfrontend';
+export class PendingjdHomeComponent {
 
   content: any[] = [ 
     { id: 'JR2025-112', 
@@ -121,4 +105,5 @@ export class AppComponent {
       { key: 'hiringManager', label: 'Hiring Manager' },
       { key: 'actions', label: 'Actions' }
     ];
+
 }

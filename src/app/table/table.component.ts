@@ -6,12 +6,13 @@ import { MatPaginator } from '@angular/material/paginator';
 import { SharedModule } from "../shared/shared.module";
 import { ButtonsComponent } from "../shared/buttons/buttons.component";
 import { table } from 'console';
+import { TablefilterComponent } from "../shared/tablefilter/tablefilter.component";
 
 
 
 @Component({
   selector:'app-table',
-  imports: [MatTableModule, MatSort, CommonModule, MatSortModule, MatPaginator, ButtonsComponent],
+  imports: [MatTableModule, MatSort, CommonModule, MatSortModule, MatPaginator, ButtonsComponent,TablefilterComponent],
   templateUrl: './table.component.html',
   styleUrl: './table.component.css'
 })

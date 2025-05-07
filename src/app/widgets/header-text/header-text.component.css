@@ -2,7 +2,7 @@
     font-size: 19px;
     font-weight: bold;
     text-align: left;
-    padding-left: 8vw;
+    padding-left: 12vw;
 }
 .profile-text{
 font-size: 14px;
@@ -19,5 +19,6 @@ text-align: left;
     font-size: 20px;
     font-weight: 600;
     text-align: left;
+    padding-left: 2.5vw;
 
 }

@@ -2,7 +2,8 @@
 
 html, body { height: 100%; }
 
-body { margin: 0; }
+body { margin: 0;
+background-color: #E2E5EC; }
 .montserrat-global {
     font-family: "Montserrat";
     font-optical-sizing: auto;
