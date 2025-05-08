@@ -1,9 +1,35 @@
-<div class="navbar">
-    <img src="assets/logo.png" alt="logoo">
-    <div class="icons-vertical" >
-        <app-icons name="dashboard" customColor="#B8AAFF" size="24px"></app-icons>
-        <app-icons name="bar_chart" customColor="#B8AAFF" size="24px"></app-icons>
-        <app-icons name="timeline" customColor="#B8AAFF"  size="24px"></app-icons>
-        <app-icons name="date_range" customColor="#B8AAFF" size="24px"></app-icons>
+
+
+
+<div class="sidebar" [class.expanded]="isExpanded">
+    <img src="assets/logo.png" alt="collapsed logo" width="50%" *ngIf="!isExpanded" />
+    <img src="assets/expanded-logo.png" alt="expanded logo" width="80%" *ngIf="isExpanded" />
+  
+    <div class="menu-items">
+        <button
+        mat-button
+        class="menu-item"
+        *ngFor="let icon of recruiterIcons"
+        [class.active]="icon.name === activeIcon " 
+        (click)="setActiveAndToggle(icon.name)"
+      >
+        <app-icons
+          [name]="icon.name"
+          [customColor]="icon.name === activeIcon ? 'white' : icon.color"
+          [size]="icon.size"
+        ></app-icons>
+      
+        &nbsp;&nbsp;&nbsp;
+      
+        <span
+          class="menu-item-text"
+          *ngIf="isExpanded"
+          (click)="onTextClick(icon)"
+        >
+          {{ icon.fullName }}
+        </span>
+      </button>
+      
     </div>
-</div>
+  </div>
+  
