@@ -1,19 +1,21 @@
-<div style="height: 100%;
-  position: relative;">
-<app-header [search]="false"></app-header>
-<app-icon-group></app-icon-group>
-<br>
-<div class="dashboard-content">
+
+  <app-header [search]="false"></app-header>
+  <app-icon-group></app-icon-group>
+  <br>
+  <div class="dashboard-content">
     <div class="left-section">
       <div class="box mat-elevation-z1">
+        <app-header-text context="table-header">Scheduled Interviews</app-header-text>
         <app-table [content]="scheduledInterviews" [columns]="scheduledColumns"></app-table>
       </div>
       <div class="box mat-elevation-z1">
+        <app-header-text context="table-header">Completed Interviews</app-header-text>
         <app-table [content]="completedInterviews" [columns]="completedColumns"></app-table>
       </div>
     </div>
     <div class="right-section">
       <div class="box mat-elevation-z1">
+        <app-header-text context="table-header">Awaiting Shortlisting</app-header-text>
         <app-table [content]="awaitingShortlisting" [columns]="awaitingColumns"></app-table>
       </div>
     </div>
