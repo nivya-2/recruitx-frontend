@@ -10,97 +10,97 @@ import { TablefilterComponent } from '../../shared/tablefilter/tablefilter.compo
   styleUrl: './closedjd-home.component.css'
 })
 export class ClosedjdHomeComponent {
-  content: any[] = [ 
-    { id: 'JR2025-112', 
+  closeJobDescriptions = [
+    {
+      id: 'JD001',
       roleTitle: 'Software Engineer',
       deliveryUnit: 'DU1',
-      location: 'Bangalore', 
-      openPositions: 5, 
-      createdDate: '05-05-2025', 
-      hiringManager: 'John Doe',
-      actions:'generate',
-      },
-      {  id: 'JR2025-113', 
-        roleTitle: 'UX Designer',
-        deliveryUnit: 'DU2',
-        location: 'Bangalore', 
-        openPositions: 7, 
-        createdDate: '05-05-2025', 
-        hiringManager: 'John James',
-        actions:'generate',
-
-      },
-      {  id: 'JR2025-114', 
-          roleTitle: 'Sales Manager',
-          deliveryUnit: 'DU4',
-          location: 'Trivandrum', 
-          openPositions: 9, 
-          createdDate: '09-05-2025', 
-          hiringManager: 'Alan Smith',
-          actions:'generate',
-
-      },
-      {  id: 'JR2025-115', 
-            roleTitle: 'Junior HR',
-            deliveryUnit: 'DU7',
-            location: 'Bangalore', 
-            openPositions: 9, 
-            createdDate: '09-05-2025', 
-            hiringManager: 'James Roy',
-            actions:'draft',
-
-      },
-      { id: 'JR2025-116', 
-              roleTitle: 'AI Engineer',
-              deliveryUnit: 'DU2',
-              location: 'Bangalore', 
-              openPositions: 7, 
-              createdDate: '05-07-2025', 
-              hiringManager: 'James Jacob',
-              actions:'generate',
-
-            },
-            {  id: 'JR2025-117', 
-                roleTitle: 'UX Designer',
-                deliveryUnit: 'DU2',
-                location: 'Bangalore', 
-                openPositions: 7, 
-                createdDate: '05-08-2025', 
-                hiringManager: 'John James',
-                actions:'draft',
-
-            },
-            {  id: 'JR2025-119', 
-              roleTitle: 'UI Designer',
-              deliveryUnit: 'DU2',
-              location: 'Bangalore', 
-              openPositions: 7, 
-              createdDate: '15-05-2025', 
-              hiringManager: 'John James',
-              actions:'draft',
-
-              },
-        {  id: 'JR2025-119', 
-          roleTitle: 'Data Analyst',
-          deliveryUnit: 'DU6',
-          location: 'Kochi', 
-          openPositions: 11, 
-          createdDate: '25-06-2025', 
-          hiringManager: 'John James',
-          actions:'generate',
-
-          }
-
-    ];
-
-    columns: Array<{key: string, label: string}> = [
-      { key: 'id', label: 'ID' },
-      { key: 'roleTitle', label: 'Role Title' },
-      { key: 'deliveryUnit', label: 'Delivery Unit' },
-      { key: 'location', label: 'Location' },
-      { key: 'openPositions', label: 'No. Of Open Positions' },
-      { key: 'createdDate', label: 'Created Date' },
-      { key: 'hiringManager', label: 'Hiring Manager' },
-      { key: 'actions', label: 'Actions' }
-    ];
+      location: 'Bangalore',
+      experience: '3-5 years',
+      createdDate: '04/04/2025',
+      associatedJR: 'JR2025-112'
+    },
+    {
+      id: 'JD002',
+      roleTitle: 'UX Designer',
+      deliveryUnit: 'DU3',
+      location: 'Trivandrum',
+      experience: '4-6 years',
+      createdDate: '12/02/2025',
+      associatedJR: 'JR2025-113'
+    },
+    {
+      id: 'JD003',
+      roleTitle: 'Data Analyst',
+      deliveryUnit: 'DU2',
+      location: 'Chennai',
+      experience: '2-6 years',
+      createdDate: '20/03/2025',
+      associatedJR: 'JR2025-114'
+    },
+    {
+      id: 'JD004',
+      roleTitle: 'Sales Manager',
+      deliveryUnit: 'DU4',
+      location: 'Kochi',
+      experience: '4-5 years',
+      createdDate: '17/01/2025',
+      associatedJR: 'JR2025-115'
+    },
+    {
+      id: 'JD005',
+      roleTitle: 'Junior HR',
+      deliveryUnit: 'DU6',
+      location: 'Trivandrum',
+      experience: '2-3 years',
+      createdDate: '10/04/2025',
+      associatedJR: 'JR2025-116'
+    },
+    {
+      id: 'JD005',
+      roleTitle: 'Junior HR',
+      deliveryUnit: 'DU6',
+      location: 'Trivandrum',
+      experience: '2-3 years',
+      createdDate: '10/04/2025',
+      associatedJR: 'JR2025-116'
+    },
+    {
+      id: 'JD005',
+      roleTitle: 'Junior HR',
+      deliveryUnit: 'DU6',
+      location: 'Trivandrum',
+      experience: '2-3 years',
+      createdDate: '10/04/2025',
+      associatedJR: 'JR2025-116'
+    },
+    {
+      id: 'JD005',
+      roleTitle: 'Junior HR',
+      deliveryUnit: 'DU6',
+      location: 'Trivandrum',
+      experience: '2-3 years',
+      createdDate: '10/04/2025',
+      associatedJR: 'JR2025-116'
+    },
+    {
+      id: 'JD005',
+      roleTitle: 'Junior HR',
+      deliveryUnit: 'DU6',
+      location: 'Trivandrum',
+      experience: '2-3 years',
+      createdDate: '10/04/2025',
+      associatedJR: 'JR2025-116'
+    }
+  ];
+  closeJDColumns = [
+    { key: 'id', label: 'ID' },
+    { key: 'roleTitle', label: 'Role Title' },
+    { key: 'deliveryUnit', label: 'Delivery Unit' },
+    { key: 'location', label: 'Location' },
+    { key: 'experience', label: 'Experience' },
+    { key: 'createdDate', label: 'Created Date' },
+    { key: 'associatedJR', label: 'Associated JR' }
+  ];
+  
 }
