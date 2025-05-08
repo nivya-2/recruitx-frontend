@@ -4,10 +4,11 @@ import { IconGroupComponent } from "../../../icon-group/icon-group.component";
 import { TablefilterComponent } from "../../../shared/tablefilter/tablefilter.component";
 import { TableComponent } from "../../../table/table.component";
 import { BreadcrumbsComponent } from "../../../breadcrumbs/breadcrumbs.component";
+import { HeaderTextComponent } from '../../../widgets/header-text/header-text.component';
 
 @Component({
   selector: 'app-schedule-home',
-  imports: [HeaderComponent, IconGroupComponent, TablefilterComponent, TableComponent, BreadcrumbsComponent],
+  imports: [HeaderTextComponent,HeaderComponent, IconGroupComponent, TablefilterComponent, TableComponent, BreadcrumbsComponent],
   templateUrl: './schedule-home.component.html',
   styleUrl: './schedule-home.component.css'
 })

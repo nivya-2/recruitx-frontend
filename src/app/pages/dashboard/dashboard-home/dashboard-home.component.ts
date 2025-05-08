@@ -2,10 +2,11 @@ import { Component } from '@angular/core';
 import { HeaderComponent } from '../../../widgets/header/header.component';
 import { IconGroupComponent } from '../../../icon-group/icon-group.component';
 import { TableComponent } from "../../../table/table.component";
+import { HeaderTextComponent } from '../../../widgets/header-text/header-text.component';
 
 @Component({
   selector: 'app-dashboard-home',
-  imports: [HeaderComponent, IconGroupComponent, TableComponent],
+  imports: [HeaderComponent, IconGroupComponent, TableComponent, HeaderTextComponent],
   templateUrl: './dashboard-home.component.html',
   styleUrl: './dashboard-home.component.css'
 })
