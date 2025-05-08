@@ -108,7 +108,7 @@
 
   
  
- /* ::ng-deep .mat-mdc-paginator-page-size{
+ ::ng-deep .mat-mdc-paginator-page-size{
   display: none !important;
  }
-   */
+  
