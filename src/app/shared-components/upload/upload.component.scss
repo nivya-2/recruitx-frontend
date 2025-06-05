@@ -63,11 +63,13 @@
       align-items: center;
       padding: 1rem 1.5rem;
       border-top: 1px solid #eee;
+      text-align: right;
     }
     
     .footer-right {
       display: flex;
       gap: 0.5rem;
+      text-align: right;
     }
     
     .selected-files {
