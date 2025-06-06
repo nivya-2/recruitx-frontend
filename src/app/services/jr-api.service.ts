@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { JobRequisitionDto } from '../pages/admin-jr-upload/admin-jr-upload.component';
 
 @Injectable({ providedIn: 'root' })
 export class JrApiService {
@@ -10,5 +11,16 @@ export class JrApiService {
 
   createJobRequisition(data: any): Observable<any> {
     return this.http.post(this.apiUrl, data);
+  }
+  getAll(): Observable<JobRequisitionDto[]> {
+    return this.http.get<JobRequisitionDto[]>(this.apiUrl);
+  }
+  delete(id: number): Observable<void> {
+    // Construct the URL for the specific resource, e.g., /api/JobRequisition/123
+    const url = `${this.apiUrl}/${id}`;
+    
+    // Send an HTTP DELETE request.
+    // We expect a 204 No Content response, so the Observable's type is <void>.
+    return this.http.delete<void>(url);
   }
 }

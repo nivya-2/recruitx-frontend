@@ -10,6 +10,7 @@ import { AlertsComponent } from '../../ui/alerts/alerts.component';
 import { ModalComponent } from "../../ui/modal/modal.component";
 import { UploadComponent } from "../../shared-components/upload/upload.component";
 import { IconComponent } from '../../ui/icon/icon.component';
+import { UserApiService, UserDetails } from '../../services/user-api-service.service';
 
 @Component({
   selector: 'app-admin-users',
@@ -19,26 +20,48 @@ import { IconComponent } from '../../ui/icon/icon.component';
   styleUrl: './admin-users.component.scss'
 })
 export class AdminUsersComponent {
+dataSource: UserDetails[] = [];
 
+  recruiterHeadName: string | null = null;
+  recruiterHeadEmail: string | null = null;
+
+    constructor(private userApi: UserApiService) {}
+mapUserDetailsToDataSource(users: UserDetails[]): any[] {
+  return users.map(u => ({
+    id: u.employeeId,   
+    userId:u.userId,     // map employeeId → id
+    name: u.name,
+    jobTitle: u.jobTitle,
+    role: u.roleTitle,       // roleTitle → role
+    location: u.location,
+    deliveryUnit: u.deliveryUnit,
+    email: u.email,
+    status1: u.status,       // status → status1 (table uses status1)
+    actions: ['Edit']        // fixed array for action buttons
+  }));
+}
+
+async ngOnInit() {
+
+    const allUsers = await this.userApi.getAllUsers().toPromise();
+
+    if (allUsers) {
+      const recruiterHead = allUsers.find(user => user.roleTitle === 'Recruiter Head');
+      if (recruiterHead) {  
+        this.recruiterHeadName = recruiterHead.name;
+        this.recruiterHeadEmail = recruiterHead.email;
+      }
+        const filteredUsers = allUsers.filter(u => u.roleTitle !== 'Recruiter Head');
+        this.dataSource = this.mapUserDetailsToDataSource(filteredUsers);
+    } else {
+      this.dataSource = [];
+    }
+  }
     visible:boolean = false;
   openModal() {
     this.visible = !this.visible;
   }
-    recruiterHeadName = "Neena Roy";
-    recruiterHeadEmail="neena@experionglobal.com"
-
-  dataSource: any[] = [
-  { id: 'EMP877653', name: 'Alia K', jobTitle: 'Senior Executive', role: 'Recruiter', location: 'Kochi', deliveryUnit: 'DU6', email: 'test@mail.com', status1: 'Active',  actions: ['Edit'] },
-  { id: 'EMP877654', name: 'Ravi M', jobTitle: 'HR Associate', role: 'Recruiter Lead', location: 'Bangalore', deliveryUnit: 'DU3', email: 'ravi.m@mail.com', status1: 'Active', actions: ['Edit'] },
-  { id: 'EMP877655', name: 'Neha S', jobTitle: 'Talent Specialist', role: 'Recruiter', location: 'Hyderabad', deliveryUnit: 'DU1', email: 'neha.s@mail.com', status1: 'Active',  actions:['Edit']},
-  { id: 'EMP877656', name: 'Karan T', jobTitle: 'HR Executive', role: 'Recruiter Lead', location: 'Chennai', deliveryUnit: 'DU2', email: 'karan.t@mail.com', status1: 'Active',  actions: ['Edit'] },
-  { id: 'EMP877657', name: 'Divya R', jobTitle: 'Senior Recruiter', role: 'Recruiter', location: 'Pune', deliveryUnit: 'DU4', email: 'divya.r@mail.com', status1: 'Active',  actions: ['Edit'] },
-  { id: 'EMP877658', name: 'Amit J', jobTitle: 'Recruitment Lead', role: 'Recruiter Lead', location: 'Mumbai', deliveryUnit: 'DU7', email: 'amit.j@mail.com', status1: 'Active', actions: ['Edit'] },
-  { id: 'EMP877659', name: 'Sneha P', jobTitle: 'HR Partner', role: 'Recruiter', location: 'Delhi', deliveryUnit: 'DU5', email: 'sneha.p@mail.com', status1: 'Active',  actions:['Edit'] },
-  { id: 'EMP877660', name: 'Rahul D', jobTitle: 'Staffing Specialist', role: 'Recruiter', location: 'Noida', deliveryUnit: 'DU2', email: 'rahul.d@mail.com', status1: 'Active',  actions: ['Edit'] },
-  { id: 'EMP877661', name: 'Priya N', jobTitle: 'Senior HR', role: 'Recruiter Lead', location: 'Ahmedabad', deliveryUnit: 'DU6', email: 'priya.n@mail.com', status1: 'Active',  actions: ['Edit'] },
-  { id: 'EMP877662', name: 'Arjun V', jobTitle: 'Recruitment Executive', role: 'Recruiter', location: 'Kolkata', deliveryUnit: 'DU1', email: 'arjun.v@mail.com', status1: 'Active', actions: ['Edit'] }
-]
+  
 
     recruitersIcons=[
       {iconName:'dashboard',size:"32px",iconColour:"red"},
@@ -86,25 +109,41 @@ export class AdminUsersComponent {
       const message = `Are you sure you want to set ${member.name} as ${newStatus}?`;
     
       this.alertsComponent.showConfirmDialog({
-        message: message,
-        header: 'Change User Status',
-        icon: 'pi pi-user-edit',
-        acceptLabel: `Set ${newStatus}`,
-        rejectLabel: 'Cancel',
-        acceptSeverity:  'success',
-        rejectSeverity: 'warn',
-        acceptSummary: 'Status Changed',
-        rejectSummary: 'Cancelled',
-        acceptDetail: `${member.name} is now ${newStatus}.`,
-        rejectDetail: 'No changes were made.',
-        onAccept: () => {
+  message: message,
+  header: 'Change User Status',
+  icon: 'pi pi-user-edit',
+  acceptLabel: `Set ${newStatus}`,
+  rejectLabel: 'Cancel',
+  acceptSeverity: 'success',
+  rejectSeverity: 'warn',
+  acceptSummary: 'Status Changed',
+  rejectSummary: 'Cancelled',
+  acceptDetail: `${member.name} is now ${newStatus}.`,
+  rejectDetail: 'No changes were made.',
+  onAccept: () => {
+    const userId = member.userId; // or the correct id field
+    if (newStatus.toLowerCase() === 'active') {
+      this.userApi.setUserActive(userId).subscribe({
+        next: () => {
           member.status1 = newStatus;
           console.log(`${member.name} status changed to ${newStatus}`);
         },
-        onReject: () => {
-          console.log('Status change cancelled.');
-        }
+ 
       });
+    } else if (newStatus.toLowerCase() === 'inactive') {
+      this.userApi.setUserInactive(userId).subscribe({
+        next: () => {
+          member.status1 = newStatus;
+          console.log(`${member.name} status changed to ${newStatus}`);
+        },
+      });
+    }
+  },
+  onReject: () => {
+    console.log('Status change cancelled.');
+  }
+});
+
     }
     
     actionMethods = {
